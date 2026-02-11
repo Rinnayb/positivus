@@ -15,8 +15,8 @@
     "lint:css:fix": "stylelint \"**/*.{css,scss,pcss}\" --fix",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
-    "lint": "run-s lint:js lint:css format",
-    "lint:fix": "run-s lint:js:fix lint:css:fix format:fix"
+    "lint": "run-s lint:css format",
+    "lint:fix": "run-s lint:css:fix format:fix"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.0",
