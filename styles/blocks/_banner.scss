@@ -12,11 +12,11 @@
   }
 
   &__body {
-    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: start;
     row-gap: 26px;
+    padding: 60px;
   }
 
   &__description {
