@@ -1,3 +1,5 @@
+@use '../helpers/index' as *;
+
 .grid {
   --gridColumns: 1;
 
@@ -9,5 +11,15 @@
     &--#{$i} {
       --gridColumns: #{$i};
     }
+  }
+
+  &--2 {
+    @include tablet {
+      --gridColumns: 1;
+    }
+  }
+
+  @include mobile {
+    gap: 30px;
   }
 }

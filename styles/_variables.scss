@@ -1,4 +1,4 @@
-@use "helpers/index" as *;
+@use 'helpers/index' as *;
 
 :root {
   --color-green: #b9ff66;
@@ -16,7 +16,7 @@
 
   --shadow: 0 5px 0 0 var(--color-dark);
 
-  --font-family-base: "Space Grotesk", sans-serif;
+  --font-family-base: 'Space Grotesk', sans-serif;
 
   --container-width: 1240px;
   --container-padding-x: 20px;
