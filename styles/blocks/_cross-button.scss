@@ -1,4 +1,4 @@
-@use "../helpers/index" as *;
+@use '../helpers/index' as *;
 
 .cross-button {
   @include reset-button;
@@ -15,7 +15,7 @@
   &::after {
     @include abs-center;
 
-    content: "";
+    content: '';
     top: 50%;
     left: 50%;
     width: 70%;

@@ -1,4 +1,4 @@
-@use "../helpers/index" as *;
+@use '../helpers/index' as *;
 
 .burger-button {
   @include reset-button;
@@ -14,7 +14,7 @@
   &::after {
     @include abs-center;
 
-    content: "";
+    content: '';
     width: 50%;
     height: 2px;
     background-color: var(--color-dark);

@@ -1,4 +1,4 @@
-@use "../helpers/index" as *;
+@use '../helpers/index' as *;
 
 .service-card {
   display: flex;
@@ -10,6 +10,12 @@
   border: var(--border);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 27px;
+  }
 
   &--green-bg {
     background-color: var(--color-green);
@@ -25,12 +31,20 @@
     justify-content: space-between;
     align-items: start;
     row-gap: 30px;
+
+    @include mobile {
+      display: contents;
+    }
   }
 
   &__title {
     display: flex;
     flex-direction: column;
     align-items: start;
+
+    @include mobile {
+      grid-column: 1 / -1;
+    }
   }
 
   &__link {
@@ -43,6 +57,10 @@
 
     @include hover {
       opacity: 0.7;
+    }
+
+    @include mobile {
+      align-self: end;
     }
 
     &--light {
@@ -61,6 +79,25 @@
       svg {
         color: var(--serviceCardLinkIconColor);
       }
+    }
+
+    &-label {
+      @include mobile {
+        @include visually-hidden;
+      }
+    }
+  }
+
+  &__image {
+    align-self: center;
+
+    @include desktop {
+      max-width: 50%;
+      height: auto;
+    }
+
+    @include mobile {
+      max-width: 165px;
     }
   }
 }
