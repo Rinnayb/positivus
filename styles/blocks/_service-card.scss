@@ -1,0 +1,66 @@
+@use "../helpers/index" as *;
+
+.service-card {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+  background-color: var(--color-grey);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  &--green-bg {
+    background-color: var(--color-green);
+  }
+
+  &--dark-bg {
+    background-color: var(--color-dark);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    row-gap: 30px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__link {
+    --serviceCardLinkIconColor: var(--color-green);
+
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+    font-size: 20px;
+
+    @include hover {
+      opacity: 0.7;
+    }
+
+    &--light {
+      --serviceCardLinkIconColor: var(--color-dark);
+
+      color: var(--color-white);
+    }
+
+    &-icon-wrapper {
+      @include flex-center;
+      @include square(41px);
+
+      background-color: currentColor;
+      border-radius: 50%;
+
+      svg {
+        color: var(--serviceCardLinkIconColor);
+      }
+    }
+  }
+}
