@@ -1,14 +1,27 @@
 @use '../helpers/index' as *;
 
 .studies {
-  padding: 70px 60px;
-  color: var(--color-white);
-  background-color: var(--color-dark);
-  border-radius: var(--border-radius-large);
+  @include desktop-above {
+    padding: 70px 60px;
+  }
+
+  @include mobile-above {
+    padding: 40px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-large);
+  }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include mobile {
+      overflow-x: scroll;
+      column-gap: 20px;
+      width: 100vw;
+      scroll-snap-type: x mandatory;
+    }
   }
 
   &__item {
@@ -18,20 +31,30 @@
     flex-direction: column;
     row-gap: 20px;
 
-    &:not(:first-child) {
-      padding-left: var(--studiesItemPaddingX);
+    @include desktop {
+      --studiesItemPaddingX: 32px;
     }
 
-    &:not(:last-child) {
-      padding-right: var(--studiesItemPaddingX);
-      border-right: 1px solid var(--color-white);
+    @include mobile-above {
+      &:not(:first-child) {
+        padding-left: var(--studiesItemPaddingX);
+      }
+
+      &:not(:last-child) {
+        padding-right: var(--studiesItemPaddingX);
+        border-right: 1px solid var(--color-white);
+      }
     }
 
+    @include mobile {
+      min-width: 350px;
+      padding: 42px 50px;
+      color: var(--color-white);
+      background-color: var(--color-dark);
+      border-radius: var(--border-radius-large);
+      scroll-snap-align: start;
+    }
   }
-
-/*  &__description {
-    max-width: 286px;
-  }*/
 
   &__link {
     display: inline-flex;
