@@ -22,10 +22,27 @@
 
   &__info {
     align-self: end;
+
+  /*  &:not(:last-child) {
+      margin-right: 10px;
+    }*/
   }
 
   &__link {
+    align-self: start;
     margin-left: auto;
 
+    @include flex-center;
+    @include square(34px);
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    color: var(--color-green);
+    flex-shrink: 0;
+  }
+
+  &__body {
+    padding-top: 28px;
+    margin-top: 28px;
+    border-top: var(--border);
   }
 }
