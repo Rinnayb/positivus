@@ -12,12 +12,12 @@
   border-radius: var(--border-radius);
 
   @include hover {
-    color: var(--color-black);
+    color: var(--color-dark);
     background-color: var(--color-green);
   }
 
   &--transparent {
-    color: var(--color-black);
+    color: var(--color-dark);
     background-color: transparent;
   }
 }
