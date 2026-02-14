@@ -1,0 +1,19 @@
+@use '../helpers/index' as *;
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  row-gap: 124px;
+  padding-top: 84px;
+  padding-bottom: 68px;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large);
+
+  &__slider {
+    &-list {
+      display: flex;
+      column-gap: 50px;
+    }
+  }
+}

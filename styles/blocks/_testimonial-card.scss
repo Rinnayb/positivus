@@ -1,0 +1,28 @@
+@use '../helpers/index' as *;
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+
+  &__body {
+    position: relative;
+    padding: 48px 52px 52px;
+    border: 1px solid var(--color-green);
+    border-radius: var(--border-radius-large);
+
+    &::after {
+      @include square(40px);
+
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50px;
+      background-color: var(--color-dark);
+      border: inherit;
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
+      rotate: 45deg;
+      translate: 0 -50%;
+    }
+  }
+}
