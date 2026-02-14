@@ -1,14 +1,15 @@
 @use '../helpers/index' as *;
 
 .team-card {
+  height: 100%;
   padding: 40px 35px;
   border: var(--border);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
-  height: 100%;
-/*  display: flex;
-  flex-direction: column;
-  justify-content: center;*/
+
+  @include mobile {
+    padding-inline: 50px;
+  }
 
   &__header {
     display: flex;
@@ -23,26 +24,35 @@
   &__info {
     align-self: end;
 
-  /*  &:not(:last-child) {
+    /*  &:not(:last-child) {
       margin-right: 10px;
-    }*/
+    } */
   }
 
   &__link {
+    flex-shrink: 0;
     align-self: start;
     margin-left: auto;
+    color: var(--color-green);
+    background-color: var(--color-dark);
+    border-radius: 50%;
 
     @include flex-center;
     @include square(34px);
-    background-color: var(--color-dark);
-    border-radius: 50%;
-    color: var(--color-green);
-    flex-shrink: 0;
   }
 
   &__body {
-    padding-top: 28px;
-    margin-top: 28px;
+    --teamCardSectionGap: 28px;
+
+    margin-top: var(--teamCardSectionGap);
+    padding-top: var(--teamCardSectionGap);
     border-top: var(--border);
+
+    @include mobile {
+      --teamCardSectionGap: 20px;
+
+      margin-top: var(--teamCardSectionGap);
+      padding-top: var(--teamCardSectionGap);
+    }
   }
 }
