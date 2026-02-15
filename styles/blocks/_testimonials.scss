@@ -3,17 +3,57 @@
 .testimonials {
   display: flex;
   flex-direction: column;
-  row-gap: 124px;
+  row-gap: 110px; // убавили на 14 пикселей из-за square
   padding-top: 84px;
-  padding-bottom: 68px;
+  padding-bottom: 54px; // убавили на 14 пикселей из-за square
   color: var(--color-white);
   background-color: var(--color-dark);
   border-radius: var(--border-radius-large);
 
   &__slider {
+    --testimonialsSliderSlideWidth: 606px;
+
     &-list {
+      overflow-x: scroll;
       display: flex;
       column-gap: 50px;
+      margin-left: calc(var(--testimonialsSliderSlideWidth) / 2 * -1);
+      scroll-snap-type: x mandatory;
+    }
+
+    &-item {
+      scroll-snap-align: start;
+      min-width: var(--testimonialsSliderSlideWidth);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 564px;
+    margin-inline: auto;
+  }
+
+  &__arrow-button {
+    @include reset-button;
+    @include flex-center;
+    @include square(48px);
+
+    color: var(--color-white);
+
+    @include hover {
+      color: var(--color-green);
+    }
+
+    &[disabled] {
+      color: var(--color-grey-alt);
+      cursor: not-allowed;
+    }
+
+    svg {
+      @include square(20px);
     }
   }
 }
