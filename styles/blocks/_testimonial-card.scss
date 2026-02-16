@@ -8,11 +8,22 @@
   flex-direction: column;
   row-gap: 48px;
 
+  @include mobile {
+    --testimonialCardCornerWidth: 33px;
+    --testimonialCardCornerOffsetleft: 46px;
+
+    row-gap: 44px;
+  }
+
   &__body {
     position: relative;
     padding: 48px var(--testimonialCardCornerOffsetleft) 52px;
     border: 1px solid var(--color-green);
     border-radius: var(--border-radius-large);
+
+    @include mobile {
+      padding: 30px;
+    }
 
     &::after {
       @include square(var(--testimonialCardCornerWidth));
@@ -33,7 +44,8 @@
     display: flex;
     flex-direction: column;
     padding-left: calc(
-      var(--testimonialCardCornerOffsetleft) + var(--testimonialCardCornerWidth) / 2
+      var(--testimonialCardCornerOffsetleft) +
+        var(--testimonialCardCornerWidth) / 2
     );
   }
 

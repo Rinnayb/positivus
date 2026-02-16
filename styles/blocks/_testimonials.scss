@@ -1,6 +1,7 @@
 @use '../helpers/index' as *;
 
 .testimonials {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   row-gap: 110px; // убавили на 14 пикселей из-за square
@@ -10,15 +11,31 @@
   background-color: var(--color-dark);
   border-radius: var(--border-radius-large);
 
+  @include tablet {
+    row-gap: 46px;
+    padding: 30px 30px 46px;
+  }
+
   &__slider {
     --testimonialsSliderSlideWidth: 606px;
+
+    @include tablet {
+      --testimonialsSliderSlideWidth: 330px;
+    }
 
     &-list {
       overflow-x: scroll;
       display: flex;
       column-gap: 50px;
-      margin-left: calc(var(--testimonialsSliderSlideWidth) / 2 * -1);
       scroll-snap-type: x mandatory;
+
+      @include tablet-above {
+        margin-left: calc(var(--testimonialsSliderSlideWidth) / 2 * -1);
+      }
+
+      @include tablet {
+        column-gap: 30px;
+      }
     }
 
     &-item {
