@@ -5,6 +5,10 @@
   flex-direction: column;
   row-gap: 5px;
 
+  @include mobile {
+    row-gap: 10px;
+  }
+
   &__label {
     @include fluid-text(16, 14);
   }
@@ -20,6 +24,10 @@
       background-color: var(--color-green);
     }
 
+    @include mobile {
+      padding-inline: 20px;
+    }
+
     &:focus {
       border-color: var(--color-green);
       outline: none;
@@ -32,6 +40,10 @@
     &--textarea {
       height: 190px;
       resize: none;
+
+      @include mobile {
+        height: 132px;
+      }
     }
   }
 }
