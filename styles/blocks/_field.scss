@@ -1,1 +1,14 @@
 @use '../helpers/index' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  &__input {
+    min-height: 59px;
+    padding: 18px 30px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+  }
+}
