@@ -3,4 +3,8 @@
 .radios {
   display: flex;
   column-gap: 35px;
+
+  @include mobile {
+    column-gap: 60px;
+  }
 }
