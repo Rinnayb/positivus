@@ -5,10 +5,33 @@
   flex-direction: column;
   row-gap: 5px;
 
+  &__label {
+    @include fluid-text(16, 14);
+  }
+
   &__input {
-    min-height: 59px;
+    width: 100%;
+    height: var(--input-height);
     padding: 18px 30px;
     border: var(--border);
     border-radius: var(--border-radius);
+
+    @include hover {
+      background-color: var(--color-green);
+    }
+
+    &:focus {
+      border-color: var(--color-green);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--color-grey-alt);
+    }
+
+    &--textarea {
+      height: 190px;
+      resize: none;
+    }
   }
 }

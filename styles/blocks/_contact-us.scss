@@ -1,9 +1,24 @@
 @use '../helpers/index' as *;
 
 .contact-us {
+  position: relative;
+  overflow-x: hidden;
   padding: 60px 100px 80px;
   background-color: var(--color-grey);
   border-radius: var(--border-radius-large);
+
+  &::after {
+    --contactUsImageOffsetY: 62px;
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    aspect-ratio: 1;
+    height: calc(100% - var(--contactUsImageOffsetY) * 2);
+    background: url('../../images/contact-us-bg.svg') center/contain no-repeat;
+    translate: -50% -50%;
+  }
 
   &__form,
   &__body {
