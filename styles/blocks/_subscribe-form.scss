@@ -1,1 +1,9 @@
 @use '../helpers/index' as *;
+
+.subscribe-form {
+  display: flex;
+  column-gap: 20px;
+  padding: 58px 40px;
+  background-color: var(--color-dark-alt);
+  border-radius: var(--border-radius);
+}
