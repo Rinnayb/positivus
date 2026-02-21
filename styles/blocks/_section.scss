@@ -3,6 +3,12 @@
 .section {
   padding-block: var(--section-padding-y);
 
+  @include mobile {
+    &:last-child {
+      padding-bottom: 90px;
+    }
+  }
+
   &--hidden-x {
     overflow-x: hidden;
   }
