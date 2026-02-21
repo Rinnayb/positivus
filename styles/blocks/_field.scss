@@ -8,7 +8,6 @@
   --fieldInputPlaceholderColor: var(--color-grey-alt);
   --fieldInputHoverBgColor: var(--color-green);
 
-
   display: flex;
   flex-direction: column;
   row-gap: 5px;
@@ -19,8 +18,8 @@
 
   &--big-height {
     --fieldInputHeight: 68px;
-
   }
+
   &--dark-bg {
     --fieldInputBgColor: var(--color-dark-alt);
     --fieldInputBorderColor: var(--color-white);
@@ -37,8 +36,8 @@
     width: 100%;
     height: var(--fieldInputHeight);
     padding: 18px 30px;
-    background-color: var(--fieldInputBgColor);
     color: var(--fieldInputTextColor);
+    background-color: var(--fieldInputBgColor);
     border: 1px solid var(--fieldInputBorderColor);
     border-radius: var(--border-radius);
 
